@@ -1,8 +1,11 @@
 package jaskiewicz.dev.pointOfSale;
 
+import jaskiewicz.dev.pointOfSale.data.product.ProductNotFoundException;
+import jaskiewicz.dev.pointOfSale.data.product.ProductProvider;
 import jaskiewicz.dev.pointOfSale.dependencies.DependencyProvider;
 import jaskiewicz.dev.pointOfSale.input.BarcodeScanner;
 import jaskiewicz.dev.pointOfSale.model.Barcode;
+import jaskiewicz.dev.pointOfSale.model.Product;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.
@@ -12,6 +15,7 @@ public class PointOfSale implements BarcodeScanner.Callback {
     private static PointOfSale instance;
 
     private BarcodeScanner scanner;
+    private final ProductProvider database;
 
     public static PointOfSale getInstance() {
         if (instance == null) {
@@ -23,6 +27,7 @@ public class PointOfSale implements BarcodeScanner.Callback {
     private PointOfSale() {
         scanner = DependencyProvider.provideBarcodeScanner();
         scanner.setCallback(this);
+        database = DependencyProvider.provideProductProvider();
     }
 
     public void startServeNextCustomer() {
@@ -41,7 +46,12 @@ public class PointOfSale implements BarcodeScanner.Callback {
 
     @Override
     public void onScanSuccess(Barcode barcode) {
-        System.out.println(barcode);
+        try {
+            Product product = database.provideProductWith(barcode);
+            System.out.println(product.getName() + " " + product.getPrice().getValue());
+        } catch (ProductNotFoundException e) {
+            System.out.println("Product not found");
+        }
     }
 
     @Override

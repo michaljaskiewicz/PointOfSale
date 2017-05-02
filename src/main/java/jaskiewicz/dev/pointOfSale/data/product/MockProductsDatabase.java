@@ -41,6 +41,7 @@ public class MockProductsDatabase implements ProductProvider {
         Optional<Product> product = products.stream()
                 .filter(p -> p.getBarcode().equals(barcode))
                 .findAny();
+
         if (product.isPresent()) {
             return product.get();
         } else {
