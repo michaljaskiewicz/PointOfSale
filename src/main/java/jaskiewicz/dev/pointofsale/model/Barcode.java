@@ -1,5 +1,7 @@
 package jaskiewicz.dev.pointOfSale.model;
 
+import jaskiewicz.dev.pointOfSale.model.exceptions.EmptyBarcodeException;
+
 import java.util.Objects;
 
 /**
@@ -10,10 +12,15 @@ public class Barcode {
     private String code;
 
     public Barcode(String code) {
-        if (code == null || code.isEmpty()) {
-            throw new IllegalArgumentException("Could not create Barcode with empty code");
+        if (code == null || code.trim().isEmpty()) {
+            throw new EmptyBarcodeException("Could not create Barcode with empty code");
         }
         this.code = code;
+    }
+
+    @Override
+    public String toString() {
+        return code;
     }
 
     public String get() {

@@ -1,5 +1,6 @@
 package jaskiewicz.dev.pointOfSale.model;
 
+import jaskiewicz.dev.pointOfSale.model.exceptions.EmptyBarcodeException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -33,7 +34,7 @@ public class ProductTest {
         try {
             new Product(barcode, name, price);
             fail("Should not create product without barcode");
-        } catch (Exception e) {
+        } catch (EmptyBarcodeException e) {
             // then pass
         }
     }
@@ -48,7 +49,7 @@ public class ProductTest {
         try {
             new Product(barcode, name, price);
             fail("Should not create product without name");
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             // then pass
         }
     }
@@ -63,7 +64,7 @@ public class ProductTest {
         try {
             new Product(barcode, name, price);
             fail("Should not create product without price");
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             // then pass
         }
     }

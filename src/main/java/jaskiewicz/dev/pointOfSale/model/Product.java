@@ -1,5 +1,7 @@
 package jaskiewicz.dev.pointOfSale.model;
 
+import jaskiewicz.dev.pointOfSale.model.exceptions.EmptyBarcodeException;
+
 import java.util.Objects;
 
 /**
@@ -13,14 +15,11 @@ public class Product {
 
     public Product(Barcode barcode, String name, Money price) {
         if (barcode == null) {
-            throw new IllegalArgumentException("Could not create Product without barcode");
+            throw new EmptyBarcodeException("Could not create Product without barcode");
         }
 
-        if (name == null) {
-            throw new IllegalArgumentException("Could not create Product without name");
-        }
-        if (price == null) {
-            throw new IllegalArgumentException("Could not create Product without price");
+        if (name == null || price == null) {
+            throw new IllegalArgumentException("Could not create Product without name or price");
         }
 
         this.barcode = barcode;
