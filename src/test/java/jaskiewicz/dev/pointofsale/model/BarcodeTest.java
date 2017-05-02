@@ -28,7 +28,7 @@ public class BarcodeTest {
         try {
             new Barcode(code);
             fail("Should not create barcode with empty code!");
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             // then pass
         }
     }
@@ -41,8 +41,19 @@ public class BarcodeTest {
         try {
             new Barcode(code);
             fail("Should not create barcode without code!");
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             // then pass
         }
+    }
+
+    @Test
+    public void should_barcodes_with_same_code_be_equal() {
+        // given
+        final String code = "0123456789";
+        // when
+        final Barcode barcode = new Barcode(code);
+        final Barcode barcodeWithSameCode = new Barcode(code);
+        // then
+        assertEquals(barcode, barcodeWithSameCode);
     }
 }
