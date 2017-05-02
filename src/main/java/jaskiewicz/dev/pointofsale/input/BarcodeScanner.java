@@ -7,12 +7,16 @@ import jaskiewicz.dev.pointOfSale.model.Barcode;
  */
 public interface BarcodeScanner {
 
-    Barcode scan();
+    void startScanning();
+
+    void stopScanning();
+
+    void setCallback(Callback callback);
 
     interface Callback {
 
-        void onScanFailed();
+        void onScanSuccess(Barcode barcode);
 
-        void onScanSuccess();
+        void onScanFailure();
     }
 }
