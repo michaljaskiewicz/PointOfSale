@@ -3,7 +3,6 @@ package jaskiewicz.dev.pointOfSale.model;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 
 /**
@@ -51,10 +50,9 @@ public class MoneyTest {
     public void should_money_with_same_value_be_equal() {
         // given
         final Double value = 2.54;
-        final Double sameValue = 2.54;
         // when
         final Money money = new Money(value);
-        final Money moneyWithSameValue = new Money(sameValue);
+        final Money moneyWithSameValue = new Money(value);
         // then
         assertEquals(money, moneyWithSameValue);
     }
