@@ -1,6 +1,6 @@
 package jaskiewicz.dev.pointofsale.output;
 
-import jaskiewicz.dev.pointofsale.model.Bill;
+import jaskiewicz.dev.pointofsale.logic.Bill;
 import jaskiewicz.dev.pointofsale.model.Product;
 
 /**

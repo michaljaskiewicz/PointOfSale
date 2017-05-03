@@ -1,5 +1,7 @@
 package jaskiewicz.dev.pointofsale;
 
+import jaskiewicz.dev.pointofsale.logic.PointOfSale;
+
 /**
  * Created by michaljaskiewicz on 01-May-17.
  */
