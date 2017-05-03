@@ -4,6 +4,7 @@ import jaskiewicz.dev.pointOfSale.data.product.ProductNotFoundException;
 import jaskiewicz.dev.pointOfSale.data.product.ProductsDatabase;
 import jaskiewicz.dev.pointOfSale.dependencies.DependencyProvider;
 import jaskiewicz.dev.pointOfSale.input.BarcodeScanner;
+import jaskiewicz.dev.pointOfSale.input.ExitInput;
 import jaskiewicz.dev.pointOfSale.model.Barcode;
 import jaskiewicz.dev.pointOfSale.model.Product;
 import jaskiewicz.dev.pointOfSale.output.LCDDisplay;
@@ -11,13 +12,14 @@ import jaskiewicz.dev.pointOfSale.output.LCDDisplay;
 /**
  * Created by michaljaskiewicz on 02-May-17.
  */
-public class PointOfSale implements BarcodeScanner.Callback {
+public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback {
 
     private static PointOfSale instance;
 
-    private final BarcodeScanner scanner;
-    private final ProductsDatabase database;
-    private final LCDDisplay lcdDisplay;
+    private BarcodeScanner scanner;
+    private ProductsDatabase database;
+    private LCDDisplay lcdDisplay;
+    private ExitInput exitInput;
 
     public static PointOfSale getInstance() {
         if (instance == null) {
@@ -27,10 +29,29 @@ public class PointOfSale implements BarcodeScanner.Callback {
     }
 
     private PointOfSale() {
+        prepareScanner();
+        prepareDatabase();
+        prepareLCDDisplay();
+        prepareExitInput();
+    }
+
+    private BarcodeScanner prepareScanner() {
         scanner = DependencyProvider.provideBarcodeScanner();
         scanner.assignCallback(this);
+        return scanner;
+    }
+
+    private void prepareDatabase() {
         database = DependencyProvider.provideProductsDatabase();
+    }
+
+    private void prepareLCDDisplay() {
         lcdDisplay = DependencyProvider.provideLCDDisplay();
+    }
+
+    private void prepareExitInput() {
+        exitInput = DependencyProvider.provideExitInput();
+        exitInput.assignCallback(this);
     }
 
     public void startServeNextCustomer() {
@@ -59,5 +80,10 @@ public class PointOfSale implements BarcodeScanner.Callback {
     @Override
     public void onScanFailure() {
         lcdDisplay.showOnDisplay("Invalid bar-code");
+    }
+
+    @Override
+    public void onExit() {
+        stopScanningAndShowPurchasesSummary();
     }
 }
