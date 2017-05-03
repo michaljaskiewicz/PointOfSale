@@ -35,10 +35,9 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
         prepareExitInput();
     }
 
-    private BarcodeScanner prepareScanner() {
+    private void prepareScanner() {
         scanner = DependencyProvider.provideBarcodeScanner();
         scanner.assignCallback(this);
-        return scanner;
     }
 
     private void prepareDatabase() {

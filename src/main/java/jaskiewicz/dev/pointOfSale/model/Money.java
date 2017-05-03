@@ -32,4 +32,9 @@ public class Money {
     public int hashCode() {
         return Objects.hash(value);
     }
+
+    public Money plus(Money money) {
+        double sum = getValue() + money.getValue();
+        return new Money(sum);
+    }
 }
