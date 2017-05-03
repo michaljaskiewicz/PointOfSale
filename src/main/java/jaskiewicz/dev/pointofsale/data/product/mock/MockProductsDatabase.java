@@ -50,4 +50,8 @@ public class MockProductsDatabase implements ProductsDatabase {
             throw new ProductNotFoundException("Product with " + barcode + " barcode not found in database!");
         }
     }
+
+    public List<Product> getProducts() {
+        return products;
+    }
 }

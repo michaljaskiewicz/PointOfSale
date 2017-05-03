@@ -11,6 +11,17 @@ import static org.junit.Assert.fail;
 public class MoneyTest {
 
     @Test
+    public void test_fractional_part_calculating() {
+        // given
+        final Double value = 11.78;
+        final int expectedFractionalPart = 78;
+        // when
+        final Money money = new Money(value);
+        // then
+        assertEquals(expectedFractionalPart, money.getFractionalPartOf(value));
+    }
+
+    @Test
     public void should_create_money_with_given_value() {
         // given
         final Double value = 2.54;
@@ -67,7 +78,7 @@ public class MoneyTest {
         // when
         final Money sum = money.plus(anotherMoney);
         // then
-        assertEquals(new Money(value + anotherValue), sum);
+        assertEquals(new Money(20.88), sum);
     }
 
     @Test
@@ -82,5 +93,16 @@ public class MoneyTest {
         final Money sum = money.plus(anotherMoney);
         // then
         assertEquals(new Money(result), sum);
+    }
+
+    @Test
+    public void should_money_be_printable() {
+        // given
+        final Money money = new Money(15.87);
+        final String expectedString = "15.87";
+        // when
+        final String moneyAsString = money.toString();
+        // then
+        assertEquals(expectedString, moneyAsString);
     }
 }

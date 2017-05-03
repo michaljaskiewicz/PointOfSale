@@ -7,17 +7,41 @@ import java.util.Objects;
  */
 public class Money {
 
-    private Double value;
+    private int integerPart;
+    private int fractionalPart;
 
-    public Money(Double value) {
-        if (value == null || value < 0) {
+    public Money(double value) {
+        if (value < 0) {
             throw new IllegalArgumentException("Money must have positive or zero value!");
         }
-        this.value = value;
+        integerPart = (int)value;
+        fractionalPart = getFractionalPartOf(value);
+    }
+
+    private Money(int integerPart, int fractionalPart) {
+        this.integerPart = integerPart;
+        this.fractionalPart = fractionalPart;
+    }
+
+    protected int getFractionalPartOf(double value) {
+        return (int) (value * 100) % 100;
+    }
+
+    public Money plus(Money money) {
+        int sumOfFractionalParts = fractionalPart + money.fractionalPart;
+        int sumOfIntegerParts = integerPart + money.integerPart;
+        int integerPartOfSum = sumOfIntegerParts + sumOfFractionalParts/100;
+        int fractionalPartOfSum = sumOfFractionalParts % 100;
+        return new Money(integerPartOfSum, fractionalPartOfSum);
     }
 
     public Double getValue() {
-        return value;
+        return integerPart + (double)fractionalPart/100d;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%d.%02d", integerPart, fractionalPart);
     }
 
     @Override
@@ -25,16 +49,12 @@ public class Money {
         if (this == obj) return true;
         if (this == null || getClass() != obj.getClass()) return false;
         final Money money = (Money) obj;
-        return Objects.equals(value, money.value);
+        return integerPart == money.integerPart
+                && fractionalPart == money.fractionalPart;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
-    }
-
-    public Money plus(Money money) {
-        double sum = getValue() + money.getValue();
-        return new Money(sum);
+        return Objects.hash(integerPart, fractionalPart);
     }
 }

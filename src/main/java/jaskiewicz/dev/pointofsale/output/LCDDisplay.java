@@ -1,5 +1,6 @@
 package jaskiewicz.dev.pointofsale.output;
 
+import jaskiewicz.dev.pointofsale.model.Bill;
 import jaskiewicz.dev.pointofsale.model.Product;
 
 /**
@@ -10,4 +11,6 @@ public interface LCDDisplay {
     void showOnDisplay(String message);
 
     void showOnDisplay(Product product);
+
+    void showTotalSumFor(Bill bill);
 }
