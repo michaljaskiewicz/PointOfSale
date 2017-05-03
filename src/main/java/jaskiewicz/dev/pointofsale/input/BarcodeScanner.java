@@ -1,6 +1,6 @@
-package jaskiewicz.dev.pointOfSale.input;
+package jaskiewicz.dev.pointofsale.input;
 
-import jaskiewicz.dev.pointOfSale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.Barcode;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.

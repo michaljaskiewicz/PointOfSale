@@ -1,4 +1,4 @@
-package jaskiewicz.dev.pointOfSale.model.exceptions;
+package jaskiewicz.dev.pointofsale.model.exceptions;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.

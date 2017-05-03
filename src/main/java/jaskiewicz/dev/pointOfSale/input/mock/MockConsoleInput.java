@@ -1,9 +1,9 @@
-package jaskiewicz.dev.pointOfSale.input.mock;
+package jaskiewicz.dev.pointofsale.input.mock;
 
-import jaskiewicz.dev.pointOfSale.input.BarcodeScanner;
-import jaskiewicz.dev.pointOfSale.input.ExitInput;
-import jaskiewicz.dev.pointOfSale.model.Barcode;
-import jaskiewicz.dev.pointOfSale.model.exceptions.EmptyBarcodeException;
+import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
+import jaskiewicz.dev.pointofsale.input.ExitInput;
+import jaskiewicz.dev.pointofsale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.exceptions.EmptyBarcodeException;
 
 import java.util.Scanner;
 

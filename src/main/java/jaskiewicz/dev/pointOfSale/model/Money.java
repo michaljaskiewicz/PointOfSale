@@ -1,4 +1,4 @@
-package jaskiewicz.dev.pointOfSale.model;
+package jaskiewicz.dev.pointofsale.model;
 
 import java.util.Objects;
 

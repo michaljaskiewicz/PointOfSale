@@ -1,4 +1,4 @@
-package jaskiewicz.dev.pointOfSale.data.product;
+package jaskiewicz.dev.pointofsale.data.product;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.

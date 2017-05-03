@@ -1,13 +1,13 @@
-package jaskiewicz.dev.pointOfSale;
+package jaskiewicz.dev.pointofsale;
 
-import jaskiewicz.dev.pointOfSale.data.product.ProductNotFoundException;
-import jaskiewicz.dev.pointOfSale.data.product.ProductsDatabase;
-import jaskiewicz.dev.pointOfSale.dependencies.DependencyProvider;
-import jaskiewicz.dev.pointOfSale.input.BarcodeScanner;
-import jaskiewicz.dev.pointOfSale.input.ExitInput;
-import jaskiewicz.dev.pointOfSale.model.Barcode;
-import jaskiewicz.dev.pointOfSale.model.Product;
-import jaskiewicz.dev.pointOfSale.output.LCDDisplay;
+import jaskiewicz.dev.pointofsale.data.product.ProductNotFoundException;
+import jaskiewicz.dev.pointofsale.data.product.ProductsDatabase;
+import jaskiewicz.dev.pointofsale.dependencies.DependencyProvider;
+import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
+import jaskiewicz.dev.pointofsale.input.ExitInput;
+import jaskiewicz.dev.pointofsale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.Product;
+import jaskiewicz.dev.pointofsale.output.LCDDisplay;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.
