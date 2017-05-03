@@ -1,5 +1,6 @@
 package jaskiewicz.dev.pointofsale.output.mock;
 
+import jaskiewicz.dev.pointofsale.model.Bill;
 import jaskiewicz.dev.pointofsale.model.Product;
 import jaskiewicz.dev.pointofsale.output.LCDDisplay;
 
@@ -16,7 +17,12 @@ public class ConsoleLCDDisplay implements LCDDisplay {
     @Override
     public void showOnDisplay(Product product) {
         String productName = product.getName();
-        String productPrice = product.getPrice().getValue().toString();
-        System.out.println(productName + " - " + productPrice);
+        String productPrice = product.getPrice().toString();
+        showOnDisplay(productName + " - " + productPrice);
+    }
+
+    @Override
+    public void showTotalSumFor(Bill bill) {
+        showOnDisplay("Total: " + bill.getTotalSum().toString());
     }
 }

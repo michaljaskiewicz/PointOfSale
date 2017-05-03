@@ -40,6 +40,11 @@ public class Money {
     }
 
     @Override
+    public String toString() {
+        return String.format("%d.%02d", integerPart, fractionalPart);
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (this == null || getClass() != obj.getClass()) return false;

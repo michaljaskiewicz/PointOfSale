@@ -6,6 +6,7 @@ import jaskiewicz.dev.pointofsale.dependencies.DependencyProvider;
 import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
 import jaskiewicz.dev.pointofsale.input.ExitInput;
 import jaskiewicz.dev.pointofsale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.Bill;
 import jaskiewicz.dev.pointofsale.model.Product;
 import jaskiewicz.dev.pointofsale.output.LCDDisplay;
 
@@ -20,6 +21,7 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
     private ProductsDatabase database;
     private LCDDisplay lcdDisplay;
     private ExitInput exitInput;
+    private Bill currentBill;
 
     public static PointOfSale getInstance() {
         if (instance == null) {
@@ -54,16 +56,20 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
     }
 
     public void startServeNextCustomer() {
+        prepareNewBill();
         scanner.startScanning();
+    }
+
+    private void prepareNewBill() {
+        currentBill = new Bill();
     }
 
     public void stopScanningAndShowPurchasesSummary(){
         // TODO
         // implement actions on 'exit' input
         scanner.stopScanning();
-        // calculate purchase cost
+        lcdDisplay.showTotalSumFor(currentBill);
         // print receipt
-        // display purchase summary on LCD display
     }
 
     @Override
@@ -71,6 +77,7 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
         try {
             Product product = database.findProductWith(barcode);
             lcdDisplay.showOnDisplay(product);
+            currentBill.add(product);
         } catch (ProductNotFoundException e) {
             lcdDisplay.showOnDisplay("Product not found");
         }
