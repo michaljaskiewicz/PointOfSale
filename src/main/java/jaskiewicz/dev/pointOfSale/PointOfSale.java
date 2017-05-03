@@ -37,14 +37,13 @@ public class PointOfSale implements BarcodeScanner.Callback {
         scanner.startScanning();
     }
 
-    public void makePayment(){
+    public void stopScanningAndShowPurchasesSummary(){
         // TODO
         // implement actions on 'exit' input
         scanner.stopScanning();
         // calculate purchase cost
         // print receipt
         // display purchase summary on LCD display
-        // startServeNextCustomer()
     }
 
     @Override
