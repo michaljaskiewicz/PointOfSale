@@ -23,11 +23,11 @@ public class BillTest {
     public void should_create_bill_with_no_products_and_zero_total_sum() {
         // given
         final Double value = 0d;
-        final Money totalSum = new Money(value);
+        final Money zeroTotalSum = new Money(value);
         // when
         final Bill bill = new Bill();
         // then
-        assertEquals(totalSum, bill.getTotalSum());
+        assertEquals(zeroTotalSum, bill.getTotalSum());
         assertEquals(Collections.emptyList(), bill.getProducts());
     }
 
