@@ -11,7 +11,7 @@ public interface BarcodeScanner {
 
     void stopScanning();
 
-    void setCallback(Callback callback);
+    void assignCallback(Callback callback);
 
     interface Callback {
 

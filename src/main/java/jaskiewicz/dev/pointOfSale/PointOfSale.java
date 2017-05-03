@@ -26,7 +26,7 @@ public class PointOfSale implements BarcodeScanner.Callback {
 
     private PointOfSale() {
         scanner = DependencyProvider.provideBarcodeScanner();
-        scanner.setCallback(this);
+        scanner.assignCallback(this);
         database = DependencyProvider.provideProductProvider();
     }
 

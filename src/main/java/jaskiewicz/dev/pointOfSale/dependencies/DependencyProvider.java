@@ -1,6 +1,6 @@
 package jaskiewicz.dev.pointOfSale.dependencies;
 
-import jaskiewicz.dev.pointOfSale.data.product.MockProductsDatabase;
+import jaskiewicz.dev.pointOfSale.data.product.mock.MockProductsDatabase;
 import jaskiewicz.dev.pointOfSale.data.product.ProductProvider;
 import jaskiewicz.dev.pointOfSale.input.BarcodeScanner;
 import jaskiewicz.dev.pointOfSale.input.mock.ConsoleBarcodeScanner;

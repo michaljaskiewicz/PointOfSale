@@ -25,7 +25,7 @@ public class ProductProviderTest {
     }
 
     @Test
-    public void should_provide_product_with_given_barcode_if_it_is_in_database() {
+    public void should_provide_product_with_given_barcode_when_it_is_in_database() {
         // given
         final Barcode barcode = new Barcode("a1a1a1a1a1");
         final String name = "Potato chips";
@@ -39,13 +39,13 @@ public class ProductProviderTest {
     }
 
     @Test
-    public void should_throw_exception_if_there_is_no_product_with_given_barcode_in_database() {
+    public void should_throw_exception_when_there_is_no_product_with_given_barcode_in_database() {
         // given
         final Barcode barcode = new Barcode("qwertyuiop");
         // when
         try {
             database.provideProductWith(barcode);
-            fail("Should throw an exception if there is no product with given barcode in database!");
+            fail("Should throw an exception when there is no product with given barcode in database!");
         } catch (ProductNotFoundException e) {
             // then pass
         }

@@ -1,5 +1,7 @@
-package jaskiewicz.dev.pointOfSale.data.product;
+package jaskiewicz.dev.pointOfSale.data.product.mock;
 
+import jaskiewicz.dev.pointOfSale.data.product.ProductNotFoundException;
+import jaskiewicz.dev.pointOfSale.data.product.ProductProvider;
 import jaskiewicz.dev.pointOfSale.model.Barcode;
 import jaskiewicz.dev.pointOfSale.model.Money;
 import jaskiewicz.dev.pointOfSale.model.Product;
@@ -37,7 +39,7 @@ public class MockProductsDatabase implements ProductProvider {
     }
 
     @Override
-    public Product provideProductWith(Barcode barcode) throws ProductNotFoundException{
+    public Product provideProductWith(Barcode barcode) throws ProductNotFoundException {
         Optional<Product> product = products.stream()
                 .filter(p -> p.getBarcode().equals(barcode))
                 .findAny();

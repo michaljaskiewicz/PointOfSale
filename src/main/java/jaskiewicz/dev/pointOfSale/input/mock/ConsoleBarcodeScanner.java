@@ -43,7 +43,7 @@ public class ConsoleBarcodeScanner implements BarcodeScanner {
     }
 
     @Override
-    public void setCallback(Callback callback) {
+    public void assignCallback(Callback callback) {
         this.callback = callback;
     }
 }
