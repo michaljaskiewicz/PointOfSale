@@ -11,6 +11,17 @@ import static org.junit.Assert.fail;
 public class MoneyTest {
 
     @Test
+    public void test_fractional_part_calculating() {
+        // given
+        final Double value = 11.78;
+        final int expectedFractionalPart = 78;
+        // when
+        final Money money = new Money(value);
+        // then
+        assertEquals(expectedFractionalPart, money.getFractionalPartOf(value));
+    }
+
+    @Test
     public void should_create_money_with_given_value() {
         // given
         final Double value = 2.54;
