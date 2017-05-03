@@ -1,4 +1,4 @@
-package jaskiewicz.dev.pointOfSale.model;
+package jaskiewicz.dev.pointofsale.model;
 
 import org.junit.Test;
 
@@ -55,5 +55,32 @@ public class MoneyTest {
         final Money moneyWithSameValue = new Money(value);
         // then
         assertEquals(money, moneyWithSameValue);
+    }
+
+    @Test
+    public void should_be_possible_to_add_money() {
+        // given
+        final Double value = 17.89;
+        final Money money = new Money(value);
+        final Double anotherValue = 2.99;
+        final Money anotherMoney = new Money(anotherValue);
+        // when
+        final Money sum = money.plus(anotherMoney);
+        // then
+        assertEquals(new Money(value + anotherValue), sum);
+    }
+
+    @Test
+    public void should_be_possible_to_add_money_with_bigger_values() {
+        // given
+        final Double value = 17273.89;
+        final Money money = new Money(value);
+        final Double anotherValue = 2090808.99;
+        final Money anotherMoney = new Money(anotherValue);
+        final double result = 2108082.88;
+        // when
+        final Money sum = money.plus(anotherMoney);
+        // then
+        assertEquals(new Money(result), sum);
     }
 }

@@ -1,12 +1,12 @@
-package jaskiewicz.dev.pointOfSale.dependencies;
+package jaskiewicz.dev.pointofsale.dependencies;
 
-import jaskiewicz.dev.pointOfSale.data.product.mock.MockProductsDatabase;
-import jaskiewicz.dev.pointOfSale.data.product.ProductsDatabase;
-import jaskiewicz.dev.pointOfSale.input.BarcodeScanner;
-import jaskiewicz.dev.pointOfSale.input.ExitInput;
-import jaskiewicz.dev.pointOfSale.input.mock.MockConsoleInput;
-import jaskiewicz.dev.pointOfSale.output.LCDDisplay;
-import jaskiewicz.dev.pointOfSale.output.mock.ConsoleLCDDisplay;
+import jaskiewicz.dev.pointofsale.data.product.mock.MockProductsDatabase;
+import jaskiewicz.dev.pointofsale.data.product.ProductsDatabase;
+import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
+import jaskiewicz.dev.pointofsale.input.ExitInput;
+import jaskiewicz.dev.pointofsale.input.mock.MockConsoleInput;
+import jaskiewicz.dev.pointofsale.output.LCDDisplay;
+import jaskiewicz.dev.pointofsale.output.mock.ConsoleLCDDisplay;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.

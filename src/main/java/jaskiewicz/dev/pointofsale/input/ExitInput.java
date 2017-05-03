@@ -1,4 +1,4 @@
-package jaskiewicz.dev.pointOfSale.input;
+package jaskiewicz.dev.pointofsale.input;
 
 /**
  * Created by michaljaskiewicz on 03-May-17.

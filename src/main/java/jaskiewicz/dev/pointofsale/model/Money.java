@@ -1,4 +1,4 @@
-package jaskiewicz.dev.pointOfSale.model;
+package jaskiewicz.dev.pointofsale.model;
 
 import java.util.Objects;
 
@@ -31,5 +31,10 @@ public class Money {
     @Override
     public int hashCode() {
         return Objects.hash(value);
+    }
+
+    public Money plus(Money money) {
+        double sum = getValue() + money.getValue();
+        return new Money(sum);
     }
 }

@@ -1,11 +1,11 @@
-package jaskiewicz.dev.pointOfSale.data;
+package jaskiewicz.dev.pointofsale.data;
 
-import jaskiewicz.dev.pointOfSale.data.product.ProductNotFoundException;
-import jaskiewicz.dev.pointOfSale.data.product.ProductsDatabase;
-import jaskiewicz.dev.pointOfSale.dependencies.DependencyProvider;
-import jaskiewicz.dev.pointOfSale.model.Barcode;
-import jaskiewicz.dev.pointOfSale.model.Money;
-import jaskiewicz.dev.pointOfSale.model.Product;
+import jaskiewicz.dev.pointofsale.data.product.ProductNotFoundException;
+import jaskiewicz.dev.pointofsale.data.product.ProductsDatabase;
+import jaskiewicz.dev.pointofsale.dependencies.DependencyProvider;
+import jaskiewicz.dev.pointofsale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.Money;
+import jaskiewicz.dev.pointofsale.model.Product;
 import org.junit.Before;
 import org.junit.Test;
 

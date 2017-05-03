@@ -1,7 +1,7 @@
-package jaskiewicz.dev.pointOfSale.output.mock;
+package jaskiewicz.dev.pointofsale.output.mock;
 
-import jaskiewicz.dev.pointOfSale.model.Product;
-import jaskiewicz.dev.pointOfSale.output.LCDDisplay;
+import jaskiewicz.dev.pointofsale.model.Product;
+import jaskiewicz.dev.pointofsale.output.LCDDisplay;
 
 /**
  * Created by michaljaskiewicz on 03-May-17.

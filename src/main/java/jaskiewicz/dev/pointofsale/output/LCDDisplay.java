@@ -1,6 +1,6 @@
-package jaskiewicz.dev.pointOfSale.output;
+package jaskiewicz.dev.pointofsale.output;
 
-import jaskiewicz.dev.pointOfSale.model.Product;
+import jaskiewicz.dev.pointofsale.model.Product;
 
 /**
  * Created by michaljaskiewicz on 03-May-17.

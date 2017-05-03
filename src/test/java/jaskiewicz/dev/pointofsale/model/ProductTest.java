@@ -1,6 +1,6 @@
-package jaskiewicz.dev.pointOfSale.model;
+package jaskiewicz.dev.pointofsale.model;
 
-import jaskiewicz.dev.pointOfSale.model.exceptions.EmptyBarcodeException;
+import jaskiewicz.dev.pointofsale.model.exceptions.EmptyBarcodeException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,7 +1,7 @@
-package jaskiewicz.dev.pointOfSale.data.product;
+package jaskiewicz.dev.pointofsale.data.product;
 
-import jaskiewicz.dev.pointOfSale.model.Barcode;
-import jaskiewicz.dev.pointOfSale.model.Product;
+import jaskiewicz.dev.pointofsale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.Product;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.

@@ -1,14 +1,25 @@
-package jaskiewicz.dev.pointOfSale.input.mock;
+package jaskiewicz.dev.pointofsale.input.mock;
 
-import jaskiewicz.dev.pointOfSale.input.BarcodeScanner;
-import jaskiewicz.dev.pointOfSale.input.ExitInput;
-import jaskiewicz.dev.pointOfSale.model.Barcode;
-import jaskiewicz.dev.pointOfSale.model.exceptions.EmptyBarcodeException;
+import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
+import jaskiewicz.dev.pointofsale.input.ExitInput;
+import jaskiewicz.dev.pointofsale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.exceptions.EmptyBarcodeException;
 
 import java.util.Scanner;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.
+ *
+ * This mock is a bit confusing and complicated because I needed to use console as two
+ * different input devices.
+ *
+ * This class is responsible for scanning barcodes - so it is mock of barcode scanner.
+ * It is also responsible for taking 'exit' user input and notify PointOfSale
+ * about 'exit' action.
+ *
+ * I'm aware that this class violates Single Responsibility Principle,
+ * but I was forced to handle both barcode scanner and 'exit' input from
+ * one device which is a single console.
  */
 public class MockConsoleInput implements BarcodeScanner, ExitInput {
 
