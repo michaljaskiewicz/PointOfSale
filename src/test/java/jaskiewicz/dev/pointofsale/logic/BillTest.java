@@ -1,7 +1,10 @@
-package jaskiewicz.dev.pointofsale.model;
+package jaskiewicz.dev.pointofsale.logic;
 
 import jaskiewicz.dev.pointofsale.data.product.mock.MockProductsDatabase;
-import jaskiewicz.dev.pointofsale.dependencies.DependencyProvider;
+import jaskiewicz.dev.pointofsale.logic.Bill;
+import jaskiewicz.dev.pointofsale.model.Barcode;
+import jaskiewicz.dev.pointofsale.model.Money;
+import jaskiewicz.dev.pointofsale.model.Product;
 import org.junit.Test;
 
 import java.util.Collections;

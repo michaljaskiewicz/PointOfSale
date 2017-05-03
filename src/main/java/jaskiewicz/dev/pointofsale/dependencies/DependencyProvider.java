@@ -6,7 +6,9 @@ import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
 import jaskiewicz.dev.pointofsale.input.ExitInput;
 import jaskiewicz.dev.pointofsale.input.mock.MockConsoleInput;
 import jaskiewicz.dev.pointofsale.output.LCDDisplay;
+import jaskiewicz.dev.pointofsale.output.ReceiptPrinter;
 import jaskiewicz.dev.pointofsale.output.mock.ConsoleLCDDisplay;
+import jaskiewicz.dev.pointofsale.output.mock.MockReceiptPrinter;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.
@@ -27,5 +29,9 @@ public class DependencyProvider {
 
     public static ExitInput provideExitInput() {
         return MockConsoleInput.getInstance();
+    }
+
+    public static ReceiptPrinter provideReceiptPrinter() {
+        return new MockReceiptPrinter();
     }
 }

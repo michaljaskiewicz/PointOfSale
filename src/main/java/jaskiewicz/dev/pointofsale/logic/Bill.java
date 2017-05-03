@@ -1,4 +1,7 @@
-package jaskiewicz.dev.pointofsale.model;
+package jaskiewicz.dev.pointofsale.logic;
+
+import jaskiewicz.dev.pointofsale.model.Money;
+import jaskiewicz.dev.pointofsale.model.Product;
 
 import java.util.LinkedList;
 import java.util.List;
