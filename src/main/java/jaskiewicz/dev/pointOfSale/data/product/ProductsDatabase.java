@@ -6,7 +6,7 @@ import jaskiewicz.dev.pointOfSale.model.Product;
 /**
  * Created by michaljaskiewicz on 02-May-17.
  */
-public interface ProductProvider {
+public interface ProductsDatabase {
 
-    Product provideProductWith(Barcode barcode) throws ProductNotFoundException;
+    Product findProductWith(Barcode barcode) throws ProductNotFoundException;
 }

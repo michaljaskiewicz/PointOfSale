@@ -1,7 +1,7 @@
 package jaskiewicz.dev.pointOfSale.data.product.mock;
 
 import jaskiewicz.dev.pointOfSale.data.product.ProductNotFoundException;
-import jaskiewicz.dev.pointOfSale.data.product.ProductProvider;
+import jaskiewicz.dev.pointOfSale.data.product.ProductsDatabase;
 import jaskiewicz.dev.pointOfSale.model.Barcode;
 import jaskiewicz.dev.pointOfSale.model.Money;
 import jaskiewicz.dev.pointOfSale.model.Product;
@@ -13,7 +13,7 @@ import java.util.Optional;
 /**
  * Created by michaljaskiewicz on 02-May-17.
  */
-public class MockProductsDatabase implements ProductProvider {
+public class MockProductsDatabase implements ProductsDatabase {
 
     private static final int INITIAL_PRODUCTS_AMOUNT = 10;
     private List<Product> products;
@@ -39,7 +39,7 @@ public class MockProductsDatabase implements ProductProvider {
     }
 
     @Override
-    public Product provideProductWith(Barcode barcode) throws ProductNotFoundException {
+    public Product findProductWith(Barcode barcode) throws ProductNotFoundException {
         Optional<Product> product = products.stream()
                 .filter(p -> p.getBarcode().equals(barcode))
                 .findAny();
