@@ -8,7 +8,7 @@ import jaskiewicz.dev.pointofsale.input.mock.MockConsoleInput;
 import jaskiewicz.dev.pointofsale.output.LCDDisplay;
 import jaskiewicz.dev.pointofsale.output.ReceiptPrinter;
 import jaskiewicz.dev.pointofsale.output.mock.ConsoleLCDDisplay;
-import jaskiewicz.dev.pointofsale.output.mock.MockReceiptPrinter;
+import jaskiewicz.dev.pointofsale.output.mock.ConsoleReceiptPrinter;
 
 /**
  * Created by michaljaskiewicz on 02-May-17.
@@ -32,6 +32,6 @@ public class DependencyProvider {
     }
 
     public static ReceiptPrinter provideReceiptPrinter() {
-        return new MockReceiptPrinter();
+        return new ConsoleReceiptPrinter();
     }
 }

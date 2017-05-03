@@ -58,6 +58,16 @@ public class MockConsoleInput implements BarcodeScanner, ExitInput {
         }
     }
 
+    @Override
+    public void exit() {
+        exitInputCallback.onExit();
+    }
+
+    @Override
+    public void assignCallback(ExitInput.Callback callback) {
+        exitInputCallback = callback;
+    }
+
     private void tryToScanBarcode(String code) {
         try {
             final Barcode barcode = new Barcode(code);
@@ -68,22 +78,12 @@ public class MockConsoleInput implements BarcodeScanner, ExitInput {
     }
 
     @Override
-    public void stopScanning() {
-        isScanning = false;
-    }
-
-    @Override
     public void assignCallback(BarcodeScanner.Callback callback) {
         this.barcodeScannerCallback = callback;
     }
 
     @Override
-    public void exit() {
-        exitInputCallback.onExit();
-    }
-
-    @Override
-    public void assignCallback(ExitInput.Callback callback) {
-        exitInputCallback = callback;
+    public void stopScanning() {
+        isScanning = false;
     }
 }

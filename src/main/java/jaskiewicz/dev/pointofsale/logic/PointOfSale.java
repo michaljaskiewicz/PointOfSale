@@ -70,7 +70,12 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
         currentBill = new Bill();
     }
 
-    public void stopScanningAndShowPurchasesSummary(){
+    @Override
+    public void onExit() {
+        stopScanningAndShowPurchasesSummary();
+    }
+
+    private void stopScanningAndShowPurchasesSummary(){
         scanner.stopScanning();
         lcdDisplay.showTotalSumFor(currentBill);
         receiptPrinter.printReceiptFrom(currentBill);
@@ -90,10 +95,5 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
     @Override
     public void onScanFailure() {
         lcdDisplay.showOnDisplay("Invalid bar-code");
-    }
-
-    @Override
-    public void onExit() {
-        stopScanningAndShowPurchasesSummary();
     }
 }

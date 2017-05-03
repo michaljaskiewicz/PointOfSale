@@ -23,7 +23,7 @@ public class Money {
         this.fractionalPart = fractionalPart;
     }
 
-    protected int getFractionalPartOf(double value) {
+    int getFractionalPartOf(double value) {
         return (int) (value * 100) % 100;
     }
 
@@ -36,7 +36,7 @@ public class Money {
     }
 
     public Double getValue() {
-        return integerPart + (double)fractionalPart/100d;
+        return integerPart + (double)fractionalPart/100;
     }
 
     @Override

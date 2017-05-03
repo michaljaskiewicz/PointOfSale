@@ -7,7 +7,7 @@ import jaskiewicz.dev.pointofsale.output.ReceiptPrinter;
 /**
  * Created by michaljaskiewicz on 03-May-17.
  */
-public class MockReceiptPrinter implements ReceiptPrinter {
+public class ConsoleReceiptPrinter implements ReceiptPrinter {
 
     @Override
     public void printReceiptFrom(Bill bill) {
