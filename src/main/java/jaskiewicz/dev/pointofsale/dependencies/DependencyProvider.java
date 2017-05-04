@@ -4,10 +4,10 @@ import jaskiewicz.dev.pointofsale.data.product.mock.MockProductsDatabase;
 import jaskiewicz.dev.pointofsale.data.product.ProductsDatabase;
 import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
 import jaskiewicz.dev.pointofsale.input.ExitInput;
-import jaskiewicz.dev.pointofsale.input.mock.MockConsoleInput;
-import jaskiewicz.dev.pointofsale.output.LCDDisplay;
+import jaskiewicz.dev.pointofsale.input.mock.ConsoleInput;
+import jaskiewicz.dev.pointofsale.output.ScreenDisplay;
 import jaskiewicz.dev.pointofsale.output.ReceiptPrinter;
-import jaskiewicz.dev.pointofsale.output.mock.ConsoleLCDDisplay;
+import jaskiewicz.dev.pointofsale.output.mock.ConsoleScreenDisplay;
 import jaskiewicz.dev.pointofsale.output.mock.ConsoleReceiptPrinter;
 
 /**
@@ -16,19 +16,19 @@ import jaskiewicz.dev.pointofsale.output.mock.ConsoleReceiptPrinter;
 public class DependencyProvider {
 
     public static BarcodeScanner provideBarcodeScanner() {
-        return MockConsoleInput.getInstance();
+        return ConsoleInput.getInstance();
     }
 
     public static ProductsDatabase provideProductsDatabase() {
         return new MockProductsDatabase();
     }
 
-    public static LCDDisplay provideLCDDisplay() {
-        return new ConsoleLCDDisplay();
+    public static ScreenDisplay provideScreenDisplay() {
+        return new ConsoleScreenDisplay();
     }
 
     public static ExitInput provideExitInput() {
-        return MockConsoleInput.getInstance();
+        return ConsoleInput.getInstance();
     }
 
     public static ReceiptPrinter provideReceiptPrinter() {

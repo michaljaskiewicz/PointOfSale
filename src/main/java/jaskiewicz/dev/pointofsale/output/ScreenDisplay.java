@@ -6,7 +6,7 @@ import jaskiewicz.dev.pointofsale.model.Product;
 /**
  * Created by michaljaskiewicz on 03-May-17.
  */
-public interface LCDDisplay {
+public interface ScreenDisplay {
 
     void showOnDisplay(String message);
 

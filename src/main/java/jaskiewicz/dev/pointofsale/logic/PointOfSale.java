@@ -7,7 +7,7 @@ import jaskiewicz.dev.pointofsale.input.BarcodeScanner;
 import jaskiewicz.dev.pointofsale.input.ExitInput;
 import jaskiewicz.dev.pointofsale.model.Barcode;
 import jaskiewicz.dev.pointofsale.model.Product;
-import jaskiewicz.dev.pointofsale.output.LCDDisplay;
+import jaskiewicz.dev.pointofsale.output.ScreenDisplay;
 import jaskiewicz.dev.pointofsale.output.ReceiptPrinter;
 
 /**
@@ -19,7 +19,7 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
 
     private BarcodeScanner scanner;
     private ProductsDatabase database;
-    private LCDDisplay lcdDisplay;
+    private ScreenDisplay lcdDisplay;
     private ExitInput exitInput;
     private ReceiptPrinter receiptPrinter;
     private Bill currentBill;
@@ -49,7 +49,7 @@ public class PointOfSale implements BarcodeScanner.Callback, ExitInput.Callback 
     }
 
     private void prepareLCDDisplay() {
-        lcdDisplay = DependencyProvider.provideLCDDisplay();
+        lcdDisplay = DependencyProvider.provideScreenDisplay();
     }
 
     private void prepareExitInput() {

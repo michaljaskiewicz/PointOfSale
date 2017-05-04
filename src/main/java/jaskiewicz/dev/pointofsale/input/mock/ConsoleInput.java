@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * Created by michaljaskiewicz on 02-May-17.
  *
- * This mock is a bit confusing and complicated because I needed to use console as two
+ * This class is a bit confusing and complicated because I needed to use console as two
  * different input devices.
  *
  * This class is responsible for scanning barcodes - so it is mock of barcode scanner.
@@ -21,22 +21,22 @@ import java.util.Scanner;
  * but I was forced to handle both barcode scanner and 'exit' input from
  * one device which is a single console.
  */
-public class MockConsoleInput implements BarcodeScanner, ExitInput {
+public class ConsoleInput implements BarcodeScanner, ExitInput {
 
-    private static MockConsoleInput instance;
+    private static ConsoleInput instance;
 
     private BarcodeScanner.Callback barcodeScannerCallback;
     private ExitInput.Callback exitInputCallback;
     private Scanner scanner;
     private boolean isScanning = false;
 
-    private MockConsoleInput() {
+    private ConsoleInput() {
         scanner = new Scanner(System.in);
     }
 
-    public static MockConsoleInput getInstance() {
+    public static ConsoleInput getInstance() {
         if (instance == null) {
-            instance = new MockConsoleInput();
+            instance = new ConsoleInput();
         }
         return instance;
     }

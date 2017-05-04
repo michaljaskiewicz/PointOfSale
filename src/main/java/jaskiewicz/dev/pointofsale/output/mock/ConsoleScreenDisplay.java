@@ -2,12 +2,12 @@ package jaskiewicz.dev.pointofsale.output.mock;
 
 import jaskiewicz.dev.pointofsale.logic.Bill;
 import jaskiewicz.dev.pointofsale.model.Product;
-import jaskiewicz.dev.pointofsale.output.LCDDisplay;
+import jaskiewicz.dev.pointofsale.output.ScreenDisplay;
 
 /**
  * Created by michaljaskiewicz on 03-May-17.
  */
-public class ConsoleLCDDisplay implements LCDDisplay {
+public class ConsoleScreenDisplay implements ScreenDisplay {
 
     @Override
     public void showOnDisplay(String message) {
